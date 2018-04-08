@@ -1,6 +1,6 @@
-###Midi To Micro
+### Midi To Micro
 
-##Steps:
+#### Steps:
 1. Acquire a .mid file.
 2. Download the free version of synthfont Synthfont http://www.synthfont.com/Downloads.html.
 3. Make sure that only one note is played at a time.
