@@ -2,7 +2,7 @@
 
 #### Steps:
 1. Acquire a .mid file.
-2. Download the free version of synthfont Synthfont http://www.synthfont.com/Downloads.html.
+2. Download the free version of Synthfont http://www.synthfont.com/Downloads.html.
 3. Make sure that only one note is played at a time.
 4. Go to the "3 Midi events" tab.
 5. Find "Show these events" and select "Note on & off".
