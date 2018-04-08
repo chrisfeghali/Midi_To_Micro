@@ -1,0 +1,79 @@
+Dependencies for Project 'Project', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x59415450)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\Low_Layer_Library -I .\System_Files -I .\Inc-I"C:\Users\Sam\Dropbox (The University of Manchester)\ARM\Start Here\Low_Layer_Projects_Without_Drivers_Folder\Starter_Project\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F401xE --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Inc\main.h)(0x591D6FAC)
+I (.\Low_Layer_Library\stm32f4xx_ll_bus.h)(0x591D6F22)
+I (.\System_Files\stm32f4xx.h)(0x591D6EFA)
+I (.\System_Files\stm32f401xe.h)(0x591D6EF9)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735F80E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cminstr.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57359116)
+I (.\System_Files\system_stm32f4xx.h)(0x591D6EFA)
+I (.\Low_Layer_Library\stm32f4xx_ll_rcc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_system.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_utils.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_pwr.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_exti.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_gpio.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_adc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_cortex.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_crc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dac.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dma.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dma2d.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_i2c.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_iwdg.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_rtc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_spi.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_tim.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_usart.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_wwdg.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_rng.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_lptim.h)(0x591D6F22)
+F (.\stm32f4xx_it.c)(0x591D6FAC)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\Low_Layer_Library -I .\System_Files -I .\Inc-I"C:\Users\Sam\Dropbox (The University of Manchester)\ARM\Start Here\Low_Layer_Projects_Without_Drivers_Folder\Starter_Project\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F401xE --C99-o .\objects\stm32f4xx_it.o --omf_browse .\objects\stm32f4xx_it.crf --depend .\objects\stm32f4xx_it.d)
+I (.\Inc\stm32f4xx_it.h)(0x591D6FAC)
+I (.\Inc\main.h)(0x591D6FAC)
+I (.\Low_Layer_Library\stm32f4xx_ll_bus.h)(0x591D6F22)
+I (.\System_Files\stm32f4xx.h)(0x591D6EFA)
+I (.\System_Files\stm32f401xe.h)(0x591D6EF9)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735F80E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cminstr.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57359116)
+I (.\System_Files\system_stm32f4xx.h)(0x591D6EFA)
+I (.\Low_Layer_Library\stm32f4xx_ll_rcc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_system.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_utils.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_pwr.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_exti.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_gpio.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_adc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_cortex.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_crc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dac.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dma.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_dma2d.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_i2c.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_iwdg.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_rtc.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_spi.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_tim.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_usart.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_wwdg.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_rng.h)(0x591D6F22)
+I (.\Low_Layer_Library\stm32f4xx_ll_lptim.h)(0x591D6F22)
+F (.\System_Files\startup_stm32f401xe.s)(0x591D6FAC)(--cpu Cortex-M4.fp -g --apcs=interwork -I"C:\Users\Sam\Dropbox (The University of Manchester)\ARM\Start Here\Low_Layer_Projects_Without_Drivers_Folder\Starter_Project\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "STM32F401xE SETA 1"--list .\listings\startup_stm32f401xe.lst --xref -o .\objects\startup_stm32f401xe.o --depend .\objects\startup_stm32f401xe.d)
+F (.\System_Files\system_stm32f4xx.c)(0x591D6FAC)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\Low_Layer_Library -I .\System_Files -I .\Inc-I"C:\Users\Sam\Dropbox (The University of Manchester)\ARM\Start Here\Low_Layer_Projects_Without_Drivers_Folder\Starter_Project\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F401xE --C99-o .\objects\system_stm32f4xx.o --omf_browse .\objects\system_stm32f4xx.crf --depend .\objects\system_stm32f4xx.d)
+I (System_Files\stm32f4xx.h)(0x591D6EFA)
+I (System_Files\stm32f401xe.h)(0x591D6EF9)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735F80E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cminstr.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x57359116)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57359116)
+I (System_Files\system_stm32f4xx.h)(0x591D6EFA)

@@ -1,0 +1,19 @@
+--cpu=Cortex-M4.fp
+".\objects\stm32f4xx_ll_usart.o"
+".\objects\stm32f4xx_it.o"
+".\objects\startup_stm32f401xe.o"
+".\objects\stm32f4xx_ll_utils.o"
+".\objects\system_stm32f4xx.o"
+".\objects\stm32f4xx_ll_adc.o"
+".\objects\stm32f4xx_ll_exti.o"
+".\objects\stm32f4xx_ll_gpio.o"
+".\objects\stm32f4xx_ll_i2c.o"
+".\objects\stm32f4xx_ll_pwr.o"
+".\objects\stm32f4xx_ll_rcc.o"
+".\objects\stm32f4xx_ll_spi.o"
+".\objects\stm32f4xx_ll_tim.o"
+".\objects\exampleprogram1.o"
+--strict --scatter ".\Objects\Project.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Project.map" -o .\Objects\Project.axf
