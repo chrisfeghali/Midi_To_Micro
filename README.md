@@ -1,4 +1,4 @@
-### Midi To Micro
+## Midi To Micro
 
 #### Steps:
 1. Acquire a .mid file.
@@ -9,3 +9,7 @@
 6. Click "Save as text" and save it as midievents.txt in the same folder as miditest.exe.
 7. Run miditest.exe.
 8. Copy and paste the arrays and notecount into ExampleProgram1.c and compile the project.
+
+
+#### Troubleshooting
+- If miditest.exe doens't work, try recompiling miditest.c
