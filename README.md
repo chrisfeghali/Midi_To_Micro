@@ -12,4 +12,4 @@
 
 
 #### Troubleshooting
-- If miditest.exe doens't work, try recompiling miditest.c
+- If miditest.exe doesn't work, try recompiling miditest.c
