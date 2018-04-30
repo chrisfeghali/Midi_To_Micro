@@ -7,9 +7,10 @@
 4. Go to the "3 Midi events" tab.
 5. Find "Show these events" and select "Note on & off".
 6. Click "Save as text" and save it as midievents.txt in the same folder as miditest.exe.
-7. Run miditest.exe.
-8. Copy and paste the arrays and notecount into ExampleProgram1.c and compile the project.
+7. Run miditest.exe  from the "ON PC" folder.
+8. Copy and paste the arrays and notecount into ExampleProgram1.c or PlayTune.ino and compile the project.
 
 
 #### Troubleshooting
 - If miditest.exe doesn't work, try recompiling miditest.c
+- If the tune is too fast or too slow, try changing the percentage number on lines 146 and 147 and recompile.
