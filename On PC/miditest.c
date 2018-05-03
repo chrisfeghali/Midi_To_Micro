@@ -6,10 +6,12 @@
 #define FILE_NAME1 "midifile.txt"
 #define FILE_NAME2 "midievents.txt"
 #define FILE_NAME3 "MidiToMicro.txt"
+
 void PrintArr(FILE *fp, long long int arr[], int len, char* str);
 int ReadFourNums(int arr[], int *p);
 int GetNum (char c, FILE *fp);
 int GetNote(int num);
+
 int main (void){
 	int a[100000] = {0};
 	int b[100000] = {0};
@@ -21,7 +23,6 @@ int main (void){
 	int i = 0;
 	int x = 0;
 	int count = 0,NoteCount = 0 ;
-	int is_midi = 0;
 	int ppq;
 	int LineCount = 0;
 	int line2 = 1, line6 =0;
@@ -31,207 +32,63 @@ int main (void){
 	FILE *fp;
 	FILE *fp2;
 	FILE *fp3;
-	/*fp = fopen(FILE_NAME1, "r");
-	if(fp == NULL){
-		printf("Can't open %s\n", FILE_NAME1);
+	fp2 = fopen(FILE_NAME2, "r");
+
+	if(fp2 == NULL){
+		printf("Can't open %s\n", FILE_NAME2);
+	} else {
+
+		printf("%s was opened. \n", FILE_NAME2);
+		char c2;
+		while ((c2 = getc(fp2)) != EOF){
+			if (c2 == '|'){
+				LineCount++;
+				if(LineCount == (2 + 8*line2)){
+					times[line2++] = GetNum(c2,fp2);
+					printf("time %lld \n", times[line2 - 1]);
+					LineCount++;
+				}
+				if(LineCount == (14+16*line6)){
+					line6++;
+					c2 = getc(fp2);
+					notes[NoteCount++] = GetNote((GetNum(c2,fp2)));
+					printf("note to send is %d\n", notes[NoteCount - 1]);
+					LineCount++;
+				}
+			}
+		}
+
+		fclose(fp2);
+		for (int i = 0, k=0; i < line2 - 1;i+=2,k++){
+			TimeDelay[k] = ((times[i+1] - times[i])*600)/(0.15* 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
+			NoteDuration[k] = ((times[i+2] - times[i+1])*60000)/(0.15 * 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
+			printf("Time2 - Time1 %d = %d - %d = %d\n",(k+1) ,(times[i+2]),(times[i+1]), (times[i+2] - times[i+1]) );
+			printf("Time delay %d\n", TimeDelay[k]);
+			printf("Note Duration %lld\n", NoteDuration[k]);
+		}
+
+		printf("line 2 is %d\n", line2);
+
+		for(int i =0; i < NoteCount ;i++){
+			NoteNum[i] = NoteDuration[i]/(notes[i]*2);
+			printf("NoteNum %d is %lld\n",(i+1), NoteNum[i]);
+		}
+
+		printf("Times at 126 and 127: %lld and %lld", times[125], times[126]);
+		printf("NoteDuration at 126 %lld\n", NoteDuration[125]);
+		printf("note at 126 %lld\n", notes[125]);
+		fp3 =  fopen(FILE_NAME3, "w");
+		
+		if(fp3 == NULL){
+			printf("Can't open %s\n", FILE_NAME3);
+		} else {
+			PrintArr(fp3, notes, NoteCount, N);
+			PrintArr(fp3, NoteNum, NoteCount, NN);
+			PrintArr(fp3, TimeDelay, NoteCount, TD);
+		}
 	}
-	else{
-		printf("%s was opened. \n", FILE_NAME1);
-		char c;
-		while ((c = getc(fp)) != EOF){
-			//printf("%c\n", c);
-			switch (c){
-				case 'a':
-					a[i++] = 10;
-					break;
-				case 'b':
-					a[i++] = 11;
-					break;
-				case 'c':
-					a[i++] = 12;
-					break;
-				case 'd':
-					a[i++] = 13;
-					break;
-				case 'e':
-					a[i++] = 14;
-					break;
-				case 'f':
-					a[i++] = 15;
-					break;
-				case '0':
-					a[i++] = 0;
-					break;
-				case '1':
-					a[i++] = 1;
-					break;
-				case '2':
-					a[i++] = 2;
-					break;
-				case '3':
-					a[i++] = 3;
-					break;
-				case '4':
-					a[i] = 4;
-					i++;
-					break;
-				case '5':
-					a[i++] = 5;
-					break;
-				case '6':
-					a[i++] = 6;
-					break;
-				case '7':
-					a[i++] = 7;
-					break;
-				case '8':
-					a[i++] = 8;
-					break;
-				case '9':
-					a[i++] = 9;
-					break;
-				default:
-					break;
-				}
-			}
-		}
-		fclose(fp);
-		for (int n = 0; n<i; n++){
-			//printf("%d", a[n]);
-		}
-		for (int n = 0; n < 100;n++){
-			b[n] = ReadFourNums(a, &count);
-		}
-		if(b[0] == 19796 && b[1] == 26724){
-			printf("\n%s is a midi\n", FILE_NAME1);
-			is_midi = 1;
-		}
-		printf("%dtracks\n", b[4]);
-		if (is_midi == 1){
-			if (b[4]!= 1){
-				printf("\n%s cannot be used as it has more than one track \n", FILE_NAME1);
-			}
-			else{
-				ppq = b[6];
-				printf("ppq is %d\n", ppq);*/
-				fp2 = fopen(FILE_NAME2, "r");
-				if(fp2 == NULL){
-					printf("Can't open %s\n", FILE_NAME2);
-				}
-				else{
-
-					printf("%s was opened. \n", FILE_NAME2);
-					char c2;
-					while ((c2 = getc(fp2)) != EOF){
-						//printf("%c", c2);
-						if (c2 == '|'){
-							LineCount++;
-							if(LineCount == (2 + 8*line2)){
-								//c2 = getc(fp2);
-								times[line2++] = GetNum(c2,fp2);
-								printf("time %lld \n", times[line2 - 1]);
-								LineCount++;
-							}
-							if(LineCount == (14+16*line6)){
-								line6++;
-								c2 = getc(fp2);
-								notes[NoteCount++] = GetNote((GetNum(c2,fp2)));
-								printf("note to send is %d\n", notes[NoteCount - 1]);
-								LineCount++;
-							}
-						}
-					}
-					fclose(fp2);
-					for (int i = 0, k=0; i < line2 - 1;i+=2,k++){
-						TimeDelay[k] = ((times[i+1] - times[i])*600)/(0.15* 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
-						NoteDuration[k] = ((times[i+2] - times[i+1])*60000)/(0.15 * 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
-						printf("Time2 - Time1 %d = %d - %d = %d\n",(k+1) ,(times[i+2]),(times[i+1]), (times[i+2] - times[i+1]) );
-						printf("Time delay %d\n", TimeDelay[k]);
-						printf("Note Duration %lld\n", NoteDuration[k]);
-					}
-					printf("line 2 is %d\n", line2);
-					for(int i =0; i < NoteCount ;i++){
-						NoteNum[i] = NoteDuration[i]/(notes[i]*2);
-						printf("NoteNum %d is %lld\n",(i+1), NoteNum[i]);
-					}
-					printf("Times at 126 and 127: %lld and %lld", times[125], times[126]);
-					printf("NoteDuration at 126 %lld\n", NoteDuration[125]);
-					printf("note at 126 %lld\n", notes[125]);
-					fp3 =  fopen(FILE_NAME3, "w");
-					
-					if(fp3 == NULL){
-					printf("Can't open %s\n", FILE_NAME3);
-					}
-					else{
-						PrintArr(fp3, notes, NoteCount, N);
-						PrintArr(fp3, NoteNum, NoteCount, NN);
-						PrintArr(fp3, TimeDelay, NoteCount, TD);
-
-						/*for(int i = 0; i<line2 -1)/2;i++){
-							fprintf()
-							*/
-					}
-
-					//printf("\n%d\n", (357/0.12/96*60000));
-
-
 }
-				}
-				/*else{
-					printf("%s was opened. \n", FILE_NAME1);
-					char c2;
-					while ((c2 = getc(fp2)) != EOF){
-						printf("%s" c2);
-						if (c2 == '|'){
-							LineCount++;
-							if(LineCount == (2 + 8*line2)){
-								line2++;
-								//printf("%d should be zero", GetNum(c2, fp2));
-								fclose(fp2);
-								//c2 = getc(fp);
-								/*while ((c2 = getc(fp)) != '|'){
-									switch (c2){
-										case '0':
-											a[i++] = 0;
-											break;
-										case '1':
-											a[i++] = 1;
-											break;
-										case '2':
-											a[i++] = 2;
-											break;
-										case '3':
-											a[i++] = 3;
-											break;
-										case '4':
-											a[i] = 4;
-											i++;	
-											break;
-										case '5':
-											a[i++] = 5;
-											break;
-										case '6':
-											a[i++] = 6;
-											break;
-										case '7':
-											a[i++] = 7;
-											break;
-										case '8':
-											a[i++] = 8;
-											break;
-										case '9':
-											a[i++] = 9;
-											break;
-										default:
-											break;
-										}
-									}*/
-								
-							
-					
-				/*for(int n = 0; n < 100; n++){
-					printf ("%d\n", b[n]);
-				}*/
+	
 void PrintArr(FILE *fp,long long int arr[], int len, char* str){
 	int i;
 	fprintf(fp,"NoteCount is %d\n", len);
@@ -240,13 +97,14 @@ void PrintArr(FILE *fp,long long int arr[], int len, char* str){
 	for (i = 0; i < (len - 1);i++){
 		fprintf(fp, " %lld,",arr[i]);
 		if (((i+1) % 19) == 0){
-		fprintf(fp, "\\\n");
-}
+			fprintf(fp, "\\\n");
+		}
 	}
 	fprintf(fp, " %d", arr[i]);
 	fprintf(fp, "};\n\n");
 	
 }
+
 int ReadFourNums(int arr[], int *p){
 	int x = *p;
 	int num = arr[x]*16*16*16 + arr[++x]*16*16 + arr[++x]*16 + arr[++x];
@@ -254,43 +112,45 @@ int ReadFourNums(int arr[], int *p){
 	*p = x;
 	return num;
 }
+
 int GetNum (char c, FILE *fp){
 	int a[10000] = {0}, z = 0, i= 0;
 	c = getc(fp);
 	switch (c){
-			case '0':
-				a[i++] = 0;
-				break;
-			case '1':
-				a[i++] = 1;
-				break;
-			case '2':
-				a[i++] = 2;
-				break;
-			case '3':
-				a[i++] = 3;
-				break;
-			case '4':
-				a[i++] = 4;
-				break;
-			case '5':
-				a[i++] = 5;
-				break;
-			case '6':
-				a[i++] = 6;
-				break;
-			case '7':
-				a[i++] = 7;
-				break;
-			case '8':
-				a[i++] = 8;
-				break;
-			case '9':
-				a[i++] = 9;
-				break;
-			default:
-				break;
-		}
+		case '0':
+			a[i++] = 0;
+			break;
+		case '1':
+			a[i++] = 1;
+			break;
+		case '2':
+			a[i++] = 2;
+			break;
+		case '3':
+			a[i++] = 3;
+			break;
+		case '4':
+			a[i++] = 4;
+			break;
+		case '5':
+			a[i++] = 5;
+			break;
+		case '6':
+			a[i++] = 6;
+			break;
+		case '7':
+			a[i++] = 7;
+			break;
+		case '8':
+			a[i++] = 8;
+			break;
+		case '9':
+			a[i++] = 9;
+			break;
+		default:
+			break;
+	}
+	
 	while ((c = getc(fp)) != '|'){
 		switch (c){
 			case '0':
@@ -340,6 +200,7 @@ int GetNum (char c, FILE *fp){
 	}
 	return z;
 }
+
 int GetNote(int num){
 	double x;
 	int note;
