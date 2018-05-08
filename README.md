@@ -13,4 +13,4 @@
 
 #### Troubleshooting
 - If miditest.exe doesn't work, try recompiling miditest.c
-- If the tune is too fast or too slow, try changing the PPQ on line 10.
+- If the tune is too fast or too slow, try changing the PPQ on line 10 in miditest.c .
