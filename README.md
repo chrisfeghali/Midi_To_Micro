@@ -13,4 +13,4 @@
 
 #### Troubleshooting
 - If miditest.exe doesn't work, try recompiling miditest.c
-- If the tune is too fast or too slow, try changing the percentage number on lines 146 and 147 and recompile.
+- If the tune is too fast or too slow, try changing the PPQ on line 10.
