@@ -7,6 +7,8 @@
 #define FILE_NAME2 "midievents.txt"
 #define FILE_NAME3 "MidiToMicro.txt"
 
+#define PPQ 0.15  						//Increase/decrease 0.15 for faster/slower song
+
 void PrintArr(FILE *fp, long long int arr[], int len, char* str);
 int ReadFourNums(int arr[], int *p);
 int GetNum (char c, FILE *fp);
@@ -60,8 +62,8 @@ int main (void){
 
 		fclose(fp2);
 		for (int i = 0, k=0; i < line2 - 1;i+=2,k++){
-			TimeDelay[k] = ((times[i+1] - times[i])*600)/(0.15* 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
-			NoteDuration[k] = ((times[i+2] - times[i+1])*60000)/(0.15 * 240); //ppq, increase 0.15 for faster and decrease 0.15 for slower song
+			TimeDelay[k] = ((times[i+1] - times[i])*600)/(PPQ* 240); 
+			NoteDuration[k] = ((times[i+2] - times[i+1])*60000)/PPQ * 240);
 			printf("Time2 - Time1 %d = %d - %d = %d\n",(k+1) ,(times[i+2]),(times[i+1]), (times[i+2] - times[i+1]) );
 			printf("Time delay %d\n", TimeDelay[k]);
 			printf("Note Duration %lld\n", NoteDuration[k]);
