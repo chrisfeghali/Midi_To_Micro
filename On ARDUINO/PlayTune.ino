@@ -105,7 +105,7 @@ void setup() {
 void loop() {
   int xvar = 0;
   for (; xvar < notecount; xvar++) {
-    if (pgm_read_word_near(&timedelay[xvar]) == 0) {
+    if (pgm_read_word_near(&timedelay[xvar]) < 25) {
       delayMicroseconds(25);
     }
     else {
